@@ -1,7 +1,5 @@
 # Converter
 
----
-
 ## description
 
 script to combine two audio tracks from a vide into one audio track
