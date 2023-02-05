@@ -1,5 +1,5 @@
 
-echo "bitte video namen eingeben"
+echo "please enter video name:"
 read vidname
 echo "video name:  $vidname"
 
