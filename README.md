@@ -6,7 +6,8 @@ script to combine two audio tracks from a vide into one audio track
 
 ## usage
 
-just enter the name of the video file in the user prompt :)
+just follow the user prompts :)
+you will need to choose an input and an output file
 only one (1) file at a time
 
 ## requirements
