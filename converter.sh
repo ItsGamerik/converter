@@ -19,9 +19,12 @@ done
 
 
 while true; do
-if [ -n "$input" ]; 
+if [[ -n "$input" && -f "$input" ]]; 
 then
     break
+else
+    echo "input file not found."
+    exit 1; # code for general errors
 fi
 
 echo "please enter video name:"
@@ -29,13 +32,14 @@ read input
 if  [ -z "$input" ]; 
 then
     echo "u need to pick an input file"
-    continue
-elif [ -e "$input" ]; 
+    exit; 
+elif [[ -f "$input" ]]; 
 then
-    echo "video name:  $input"
-    break
+    echo "file exists: $input"
+    break;
 else
     echo "file does not exist"
+    exit;
 fi
 done
 
@@ -68,3 +72,5 @@ ffmpeg -i ./temp/audio0.aac -i ./temp/audio1.aac -filter_complex "[0:a][1:a]amer
 ffmpeg -i ./temp/video.mkv -i ./temp/audio_combo.wav -c:v copy -c:a aac -map 0:v:0 -map 1:a:0 $output
 
 rm -rv ./temp
+
+exit 0;
